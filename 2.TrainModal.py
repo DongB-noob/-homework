@@ -1,6 +1,4 @@
-'''
-    加载pytorch自带的模型，从头训练自己的数据
-'''
+
 import time
 import torch
 from torch import nn
@@ -12,7 +10,7 @@ from torchvision.models import vgg11, vgg13, vgg16, vgg19   # VGG系列
 from torchvision.models import resnet18, resnet34, resnet101, resnet50    # ResNet系列
 from torchvision.models import inception_v3     # Inception 系列
 
-# 定义训练函数，需要
+# 定义训练函数
 def train(dataloader, model, loss_fn, optimizer):
     size = len(dataloader.dataset)
     # 从数据加载器中读取batch（一次读取多少张，即批次数），X(图片数据)，y（图片真实标签）。
@@ -99,9 +97,7 @@ if __name__=='__main__':
     model = resnet50(pretrained=False, num_classes=5).to(device)
 
 
-
-
-    print(model)0
+    print(model)
     # 定义损失函数，计算相差多少，交叉熵，
     loss_fn = nn.CrossEntropyLoss()
 
